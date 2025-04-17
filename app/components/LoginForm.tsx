@@ -7,8 +7,10 @@ import {
   Container,
   Paper,
 } from "@mui/material";
+import ServerContext from "~/server-context";
 
 export function LoginForm() {
+  const serverContext = React.useContext(ServerContext);
   const [formData, setFormData] = React.useState({
     email: "",
     password: "",
@@ -41,7 +43,7 @@ export function LoginForm() {
         }}
       >
         <Typography component="h1" variant="h5" sx={{ mb: 3 }}>
-          Sign in
+          Sign in {serverContext}
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField

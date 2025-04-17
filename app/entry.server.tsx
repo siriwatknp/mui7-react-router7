@@ -9,6 +9,7 @@ import { renderToPipeableStream, renderToString } from "react-dom/server";
 import createEmotionCache from "@emotion/cache";
 import { CacheProvider as EmotionCacheProvider } from "@emotion/react";
 import createEmotionServer from "@emotion/server/create-instance";
+import ServerContext from "./server-context";
 
 export const streamTimeout = 5_000;
 
@@ -26,7 +27,9 @@ export default function handleRequest(
 
   const html = renderToString(
     <EmotionCacheProvider value={emotionCache}>
-      <ServerRouter context={routerContext} url={request.url} />
+      <ServerContext.Provider value={100}>
+        <ServerRouter context={routerContext} url={request.url} />
+      </ServerContext.Provider>
     </EmotionCacheProvider>
   );
 
