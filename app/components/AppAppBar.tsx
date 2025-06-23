@@ -12,8 +12,8 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { Link } from 'react-router';
-import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
-import Sitemark from './SitemarkIcon';
+import ColorModeIconDropdown from '../shared-theme/ColorModeIconDropdown';
+import { SitemarkIcon as Sitemark } from './CustomIcons';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: 'flex',

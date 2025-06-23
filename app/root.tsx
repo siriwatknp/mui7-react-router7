@@ -7,8 +7,10 @@ import {
   ScrollRestoration,
 } from "react-router";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
+import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import createEmotionCache from "./createCache";
+import AppTheme from "./shared-theme/AppTheme";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -36,7 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <InitColorSchemeScript defaultMode="dark" />
+        <InitColorSchemeScript attribute="class" />
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -51,11 +53,17 @@ export default function App() {
   if (typeof window !== "undefined") {
     return (
       <CacheProvider value={cache}>
-        <Outlet />
+        <AppTheme>
+          <Outlet />
+        </AppTheme>
       </CacheProvider>
     );
   }
-  return <Outlet />;
+  return (
+    <AppTheme>
+      <Outlet />
+    </AppTheme>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

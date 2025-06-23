@@ -1,6 +1,10 @@
 import type { Route } from "./+types/home";
 import type {} from "@mui/material/themeCssVarsAugmentation";
-import Blog from "../components/blog/Blog";
+import Container from "@mui/material/Container";
+import AppAppBar from "../components/AppAppBar";
+import MainContent from "../components/MainContent";
+import Latest from "../components/Latest";
+import Footer from "../components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -10,5 +14,18 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Blog />;
+  return (
+    <>
+      <AppAppBar />
+      <Container
+        maxWidth="lg"
+        component="main"
+        sx={{ display: "flex", flexDirection: "column", py: 16, gap: 4 }}
+      >
+        <MainContent />
+        <Latest />
+      </Container>
+      <Footer />
+    </>
+  );
 }
