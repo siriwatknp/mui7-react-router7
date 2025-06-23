@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "dev": "VITE_CJS_IGNORE_WARNING=true react-router dev",
+    "dev": "react-router dev",
     "predev": "node scripts/patch-emotion-packages.js",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
@@ -12,28 +12,28 @@
     "unpatch:emotion": "node scripts/unpatch-emotion-packages.js"
   },
   "dependencies": {
-    "@emotion/cache": "11.14.0",
-    "@emotion/react": "11.14.0",
-    "@emotion/server": "11.11.0",
-    "@emotion/styled": "11.14.0",
-    "@mui/icons-material": "7.1.2",
-    "@mui/material": "7.1.2",
-    "@react-router/node": "^7.5.3",
-    "@react-router/serve": "^7.5.3",
-    "isbot": "^5.1.27",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router": "^7.5.3"
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@react-router/node": "latest",
+    "@react-router/serve": "latest",
+    "isbot": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router": "latest"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.5.3",
-    "@tailwindcss/vite": "^4.1.4",
-    "@types/node": "^20",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "tailwindcss": "^4.1.4",
-    "typescript": "^5.8.3",
-    "vite": "^6",
-    "vite-tsconfig-paths": "^5.1.4"
+    "@react-router/dev": "latest",
+    "@tailwindcss/vite": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-tsconfig-paths": "latest"
   }
 }
