@@ -4,9 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "dev": "react-router dev",
+    "dev": "VITE_CJS_IGNORE_WARNING=true react-router dev",
+    "predev": "node scripts/patch-emotion-packages.js",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "patch:emotion": "node scripts/patch-emotion-packages.js",
+    "unpatch:emotion": "node scripts/unpatch-emotion-packages.js"
   },
   "dependencies": {
     "@emotion/cache": "11.14.0",
@@ -30,7 +33,7 @@
     "@types/react-dom": "^19.1.2",
     "tailwindcss": "^4.1.4",
     "typescript": "^5.8.3",
-    "vite": "^5.4.11",
+    "vite": "^6",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
