@@ -36,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <InitColorSchemeScript attribute="class" />
+        <InitColorSchemeScript />
         {children}
         <ScrollRestoration />
         <Scripts />
